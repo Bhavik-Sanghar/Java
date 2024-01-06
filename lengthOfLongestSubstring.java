@@ -1,14 +1,26 @@
 class Solution {
-    public int lengthOfLongestSubstring(String s) {
-        // Your logic goes here
-        
-        // Initialize variables if needed
-        
-        // Loop through the string and implement your solution
-        
-        // Return the result
-        return 0;  // Replace with the actual result
+public int lengthOfLongestSubstring(String s) {
+    // Initialize variables if needed
+    int max = 0;
+    int count = 0;
+
+    // Loop through the string and implement your solution
+    for (int i = 0; i < s.length(); i++) {
+        for (int j = i; j < s.length(); j++) {
+            if (s.substring(i, j).indexOf(s.charAt(j)) == -1) {
+                count++;
+                max = Math.max(max, count);
+            } else {
+                break;
+            }
+        }
+        count = 0;  // Reset count for the next substring
     }
+
+    // Return the result
+    return max;
+}
+
 
     public static void main(String[] args) {
         Solution solution = new Solution();
