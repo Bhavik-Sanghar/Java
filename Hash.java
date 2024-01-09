@@ -10,7 +10,9 @@ public class Hash {
         set.add(3);
         set.add(3);
         set.add(5);
-
+        if(set.contains(1)){
+            System.out.println("Hey Bro I am Here ");
+        }
         System.out.println(set);
         System.out.println("Set Size is : " +set.size());
         set.remove(1);
